@@ -483,6 +483,7 @@ export default class Dropdown extends PureComponent {
             labelExtractor,
             dropdownOffset,
             renderAccessory = this.renderAccessory,
+            labelContainerStyle
         } = this.props;
 
         let index = this.selectedIndex();
@@ -505,15 +506,10 @@ export default class Dropdown extends PureComponent {
             String(title);
 
         return (
-            <TextInput
-                style={{backgroundColor: "transparent", marginBottom: 16}}
-                label=''
-                {...props}
-                value={title}
-                editable={false}
-                onChangeText={undefined}
-                renderAccessory={renderAccessory}
-            />
+            <Text style={{backgroundColor: "white", marginBottom: 16, color:'red'}, labelContainerStyle}
+               >
+                {title}
+            </Text>
         );
     }
 
